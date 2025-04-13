@@ -1,12 +1,16 @@
 ﻿using System;
 
-class Program
+namespace _40KBinaryConverter
 {
-    static void Main() //Méthode Main qui lance le programme
+
+    internal class Program
     {
-        Console.ForegroundColor = ConsoleColor.Green; //Changement de la couleur de police de la console au lancement du programme
-        
-        Menu menu = new Menu();
-        menu.DisplayMainMenu();
+        static void Main() //Méthode Main qui lance le programme
+        {
+            Console.ForegroundColor = ConsoleColor.Green; //Changement de la couleur de police de la console au lancement du programme
+
+            Menu menu = new Menu();
+            menu.DisplayMainMenu();
+        }
     }
 }

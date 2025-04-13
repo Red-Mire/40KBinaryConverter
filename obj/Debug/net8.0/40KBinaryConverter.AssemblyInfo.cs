@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("40KBinaryConverter")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27c1954e49ec290c4aa882f963f7185d5034e5c7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66ab8d9bb6be3225b4f2e8ba899fdecd6f51c7a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("40KBinaryConverter")]
 [assembly: System.Reflection.AssemblyTitleAttribute("40KBinaryConverter")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
