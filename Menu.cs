@@ -29,7 +29,7 @@ namespace _40KBinaryConverter
                     break;
 
                 case "2":
-                    ConvertStringToBytes(CollectInputString());
+                    ConvertBytesToBinary(ConvertStringToBytes(CollectInputString()));
 
                     break;
 
@@ -37,6 +37,10 @@ namespace _40KBinaryConverter
                     Console.Clear();
                     Console.WriteLine("Praise the Omnissiah!");
                     Environment.Exit(0);
+                    break;
+
+                default:
+                    Console.WriteLine("Invalide user input. Please try again.");
                     break;
             }
         }
@@ -46,15 +50,30 @@ namespace _40KBinaryConverter
             Console.Clear();
             Console.WriteLine("Enter string to be converted");
             string inputString = Console.ReadLine();
-            Console.WriteLine("Acknowledged. Processing input string : \"" + inputString + "\"");
+            Console.WriteLine("\nAcknowledged. Processing input string : \"" + inputString + "\"");
             return inputString;
         }
 
         private static byte[] ConvertStringToBytes(string inputString)
         {
             byte[] outputbytes = ConversionEngine.ConvertStringToAsciiBytes(inputString);
-            Console.WriteLine(outputbytes);
+            Console.WriteLine("\nConverting string to bytes... Done. Output is : ");
+            string bytesString = "";
+            foreach (byte b in outputbytes)
+            {
+                bytesString = bytesString + ", " + b;
+            }
+            Console.WriteLine(bytesString);
             return outputbytes;
+        }
+        private static string ConvertBytesToBinary(byte[] inputBytes)
+        {
+            Console.WriteLine("\nConverting bytes to binary... Done. Output is : ");
+            string convertedBinaryString = ConversionEngine.ConvertAsciiBytesToBinary(inputBytes);
+            Console.WriteLine(convertedBinaryString);
+            
+            return convertedBinaryString;
+
         }
 
 
