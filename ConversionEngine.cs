@@ -56,8 +56,18 @@ namespace _40KBinaryConverter
 
         internal static void ExportToJsonFile(string jsonfile)
         {
+
+            //Création du dossier d'export si il n'existe pas déjà
+            string fullPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..","exports"));
+
+            if (!Directory.Exists(fullPath))
+            {
+                Directory.CreateDirectory(fullPath);
+            }
+
+            //Création du fichier à l'emplacement indiqué
             string fileName = "Lingua_Technis_Translation_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".json";
-            File.WriteAllText(fileName, jsonfile);
+            File.WriteAllText(Path.Combine(fullPath, fileName), jsonfile);
         }
 
     }

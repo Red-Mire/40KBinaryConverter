@@ -35,7 +35,7 @@ namespace _40KBinaryConverter
                     Console.WriteLine("DEBUG - JSON content is : " + jsonSerialized);
                     ConversionEngine.ExportToJsonFile(jsonSerialized);
 
-                    //Implémenter le choix plus tard
+                    //ImplÃ©menter le choix plus tard
                     //Console.WriteLine("Preserve the data ? (Y/N)");
                     //string subchoice = Console.ReadLine();
 
