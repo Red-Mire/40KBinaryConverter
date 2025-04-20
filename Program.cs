@@ -9,8 +9,11 @@ namespace _40KBinaryConverter
         {
             Console.ForegroundColor = ConsoleColor.Green; //Changement de la couleur de police de la console au lancement du programme
 
-            Menu menu = new Menu();
-            menu.DisplayMainMenu();
+            while (true)
+            {
+                Menu.DisplayMainMenu();
+            }
+            
         }
     }
 }

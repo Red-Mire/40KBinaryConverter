@@ -6,7 +6,7 @@ namespace _40KBinaryConverter
     internal class Menu
     {
 
-        internal void DisplayMainMenu()
+        internal static void DisplayMainMenu()
         {
             string menu = @"
     ==== Welcome to 40K Binary Converter ====
@@ -29,7 +29,16 @@ namespace _40KBinaryConverter
                     break;
 
                 case "2":
-                    ConvertBytesToBinary(ConvertStringToBytes(CollectInputString()));
+                    string binaryOutput = ConvertBytesToBinary(ConvertStringToBytes(CollectInputString())); //Conversion string > bytes ASCII > binaire
+                    Console.WriteLine(" Conversion finished. Output is : \n" + binaryOutput);
+                    string jsonSerialized = ConversionEngine.SerializeToJson(binaryOutput);
+                    Console.WriteLine("DEBUG - JSON content is : " + jsonSerialized);
+                    ConversionEngine.ExportToJsonFile(jsonSerialized);
+
+                    //Implémenter le choix plus tard
+                    //Console.WriteLine("Preserve the data ? (Y/N)");
+                    //string subchoice = Console.ReadLine();
+
 
                     break;
 
@@ -45,13 +54,21 @@ namespace _40KBinaryConverter
             }
         }
 
-        private string CollectInputString()
+        private static string CollectInputString()
         {
             Console.Clear();
             Console.WriteLine("Enter string to be converted");
             string inputString = Console.ReadLine();
-            Console.WriteLine("\nAcknowledged. Processing input string : \"" + inputString + "\"");
-            return inputString;
+            if (inputString != null)
+            {
+                Console.WriteLine("\nAcknowledged. Processing input string : \"" + inputString + "\"");
+                return inputString;
+            }
+            else
+            {
+                Console.WriteLine("ERROR : Input string is empty");
+                return string.Empty;
+            }
         }
 
         private static byte[] ConvertStringToBytes(string inputString)
@@ -68,9 +85,9 @@ namespace _40KBinaryConverter
         }
         private static string ConvertBytesToBinary(byte[] inputBytes)
         {
-            Console.WriteLine("\nConverting bytes to binary... Done. Output is : ");
+            //Console.WriteLine("\nConverting bytes to binary... Done. Output is : ");
             string convertedBinaryString = ConversionEngine.ConvertAsciiBytesToBinary(inputBytes);
-            Console.WriteLine(convertedBinaryString);
+            //Console.WriteLine(convertedBinaryString);
             
             return convertedBinaryString;
 
