@@ -1,7 +1,2 @@
 # 40KBinaryConverter
-
-To be added : 
-StringBuilder to enhance performance in Menu.ConvertStringToBytes()
-[DONE] Export program ouput to JSON file in a Transcript folder of the current directory : 
-	- Serialize
-	- File.WriteAllText(string path, string content);
+Simple program with a Warhammer 40,000 flavor. Converts a text input string into a binary output string. All executions are saved as JSON files into a dedicated directory.
